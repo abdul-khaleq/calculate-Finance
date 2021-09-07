@@ -12,10 +12,11 @@
 </head>
 
 <body>
+    <!-- Calculate the P/E ratio. -->
     <div class="container">
         <h3>Calculate the P/E ratio.
         </h3>
-        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
             <div class="col">
                 <div class="border bg-light">
                     <div class="input-group">
@@ -45,7 +46,7 @@
             </div>
             <div class="col">
                 <div class="">
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <button onclick="calculatePERatio()" class="btn btn-primary" type="button"
                             id="button-addon1">Calculate the
                             P/E ratio</button>
@@ -65,7 +66,7 @@
     <div class="container">
         <h3>Calculate the EPS.
         </h3>
-        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
             <div class="col">
                 <div class="border bg-light">
                     <div class="input-group">
@@ -86,7 +87,7 @@
             </div>
             <div class="col">
                 <div class="">
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <button onclick="calculateTheEPS()" class="btn btn-primary" type="button"
                             id="button-addon1">Calculate the P/E ratio</button>
                     </div>
@@ -100,11 +101,12 @@
             </div>
         </div>
     </div>
+    <br>
     <!-- Calculate NAV  -->
     <div class="container">
         <h3>Calculate NAV
         </h3>
-        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
             <div class="col">
                 <div class="border bg-light">
                     <div class="input-group">
@@ -156,11 +158,12 @@
             </div>
         </div>
     </div>
+    <br>
     <!-- Determine the number of share outstanding -->
     <div class="container">
         <h3> Determine the number of share outstanding.
         </h3>
-        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
             <div class="col">
                 <div class="border bg-light">
                     <div class="input-group">
@@ -210,6 +213,55 @@
             <div class="col">
                 <div class="p-2 border bg-light">
                     Result <span id="number-of-share-outstanding-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- the present value -->
+    <div class="container">
+        <h3> what would be the present value?
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">dividend </span>
+                        <input id="dividend" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">selling price</span>
+                        <input id="selling-price" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> discount rate</span>
+                        <input id="discount-rate" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group">
+                        <button onclick="calculatePresentValue()" class="btn btn-primary" type="button"
+                            id="button-addon1">Calculate present value</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="present-value-result"> </span>
                 </div>
             </div>
         </div>

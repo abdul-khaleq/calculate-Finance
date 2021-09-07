@@ -1,12 +1,11 @@
-
 // Calculate the P/E ratio
 function calculatePERatio() {
     const netProfitText = document.getElementById('net-profit').value;
-    const netProfit = parseInt(netProfitText);
+    const netProfit = parseFloat(netProfitText);
     const numberOfEquityShareText = document.getElementById('number-of-equityequity-share').value;
-    const numberOfEquityShare = parseInt(numberOfEquityShareText);
+    const numberOfEquityShare = parseFloat(numberOfEquityShareText);
     const marketPricePerShareText = document.getElementById('market-price-per-share').value;
-    const marketPricePerShare = parseInt(marketPricePerShareText);
+    const marketPricePerShare = parseFloat(marketPricePerShareText);
     const peResult = document.getElementById('pe-result');
     const EPS = netProfit / numberOfEquityShare;
     const resut = marketPricePerShare / EPS;
@@ -18,9 +17,9 @@ function calculatePERatio() {
 // Calculate the EPS
 function calculateTheEPS() {
     const peRatioText = document.getElementById('pe-ration').value;
-    const peRatio = parseInt(peRatioText);
+    const peRatio = parseFloat(peRatioText);
     const marketPricePerShareOfEPSText = document.getElementById('market-price-per-share-of-eps').value;
-    const marketPricePerShareOfEPS = parseInt(marketPricePerShareOfEPSText);
+    const marketPricePerShareOfEPS = parseFloat(marketPricePerShareOfEPSText);
     const epsResult = document.getElementById('eps-result');
 
     const resutOfEPS = marketPricePerShareOfEPS / peRatio;
@@ -31,13 +30,13 @@ function calculateTheEPS() {
 // Calculate NAV
 function CalculateNAV() {
     const securitiesWorthText = document.getElementById('securities-worth').value;
-    const securitiesWorth = parseInt(securitiesWorthText);
+    const securitiesWorth = parseFloat(securitiesWorthText);
     const fundOwesText = document.getElementById('fund-owes').value;
-    const fundOwes = parseInt(fundOwesText);
+    const fundOwes = parseFloat(fundOwesText);
     const anotherRentText = document.getElementById('another-rent').value;
-    const anotherRent = parseInt(anotherRentText);
+    const anotherRent = parseFloat(anotherRentText);
     const sharesOutstandingText = document.getElementById('shares-outstanding').value;
-    const sharesOutstanding = parseInt(sharesOutstandingText);
+    const sharesOutstanding = parseFloat(sharesOutstandingText);
     const navResult = document.getElementById('nav-result');
 
     const fundOwesAnotherRent = fundOwes + anotherRent;
@@ -52,21 +51,38 @@ function CalculateNAV() {
 // Determine the number of share outstanding.
 function CalculateNumberOfShareOutstanding() {
     const securitiesWorthText2 = document.getElementById('securities-worth2').value;
-    const securitiesWorth2 = parseInt(securitiesWorthText2);
+    const securitiesWorth2 = parseFloat(securitiesWorthText2);
     const fundOwesText2 = document.getElementById('fund-owes2').value;
-    const fundOwes2 = parseInt(fundOwesText2);
+    const fundOwes2 = parseFloat(fundOwesText2);
     const anotherRentText2 = document.getElementById('another-rent2').value;
-    const anotherRent2 = parseInt(anotherRentText2);
+    const anotherRent2 = parseFloat(anotherRentText2);
     const valueOfNAVText = document.getElementById('value-of-nav').value;
-    const valueOfNAV = parseInt(valueOfNAVText);
+    const valueOfNAV = parseFloat(valueOfNAVText);
     const nvalueOfNAVResult = document.getElementById('number-of-share-outstanding-result');
 
     const fundOwesAnotherRent2 = fundOwes2 + anotherRent2;
     const numberOfOutstandingResult = (securitiesWorth2 - fundOwesAnotherRent2) / valueOfNAVText;
     nvalueOfNAVResult.innerText = numberOfOutstandingResult;
 
-    // document.getElementById('securities-worth').value = '';
-    // document.getElementById('fund-owes').value = '';
-    // document.getElementById('another-rent').value = '';
-    // document.getElementById('shares-outstanding').value = '';
+    document.getElementById('securities-worth2').value = '';
+    document.getElementById('fund-owes2').value = '';
+    document.getElementById('another-rent2').value = '';
+    document.getElementById('shares-outstanding').value = '';
+}
+// the present value
+function calculatePresentValue() {
+    const dividendText = document.getElementById('dividend').value;
+    const dividend = parseFloat(dividendText);
+    const sellingPriceText = document.getElementById('selling-price').value;
+    const sellingPrice = parseFloat(sellingPriceText);
+    const discountRateText = document.getElementById('discount-rate').value;
+    const discountRate = parseFloat(discountRateText);
+    const k = discountRate / 100;
+    const presentValueResult = document.getElementById('present-value-result');
+    const presentValue = (dividend + sellingPrice) / (1 + k);
+    presentValueResult.innerText = presentValue;
+
+    document.getElementById('dividend').value = '';
+    document.getElementById('selling-price').value = '';
+    document.getElementById('discount-rate').value = '';
 }
