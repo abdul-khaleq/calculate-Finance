@@ -67,7 +67,7 @@ function CalculateNumberOfShareOutstanding() {
     document.getElementById('securities-worth2').value = '';
     document.getElementById('fund-owes2').value = '';
     document.getElementById('another-rent2').value = '';
-    document.getElementById('shares-outstanding').value = '';
+    document.getElementById('value-of-nav').value = '';
 }
 // the present value
 function calculatePresentValue() {
@@ -85,4 +85,34 @@ function calculatePresentValue() {
     document.getElementById('dividend').value = '';
     document.getElementById('selling-price').value = '';
     document.getElementById('discount-rate').value = '';
+}
+
+
+function calculatePresentValueForMultipleYear() {
+    const dividendText1 = document.getElementById('dividend-multiple-1').value;
+    const dividend1 = parseFloat(dividendText1);
+    const dividendText2 = document.getElementById('dividend-multiple-2').value;
+    const dividend2 = parseFloat(dividendText2);
+    const dividendText3 = document.getElementById('dividend-multiple-3').value;
+    const dividend3 = parseFloat(dividendText3);
+    const sellingPriceForMultipleYearText = document.getElementById('selling-price-for-multiple-year').value;
+    const sellingPriceForMultipleYear = parseFloat(sellingPriceForMultipleYearText);
+    const discountRateForMultipleYearText = document.getElementById('discount-rate-for-multiple-year').value;
+    const discountRateForMultipleYear = parseFloat(discountRateForMultipleYearText);
+    const k2 = discountRateForMultipleYear / 100;
+
+    const presentValueForMultipleYearResult = document.getElementById('present-value-for-multiple-year-result');
+
+    const dividend1Power = dividend1 / Math.pow((1 + k2), 1);
+    const dividend2Power = dividend2 / Math.pow(1 + k2, 2);
+    const dividend3Power = (dividend3 + sellingPriceForMultipleYear) / Math.pow(1 + k2, 3)
+
+    const presentValueForMultipleYear = dividend1Power + dividend2Power + dividend3Power;
+    presentValueForMultipleYearResult.innerText = presentValueForMultipleYear;
+
+    document.getElementById('dividend-multiple-1').value = '';
+    document.getElementById('dividend-multiple-2').value = '';
+    document.getElementById('dividend-multiple-3').value = '';
+    document.getElementById('selling-price-for-multiple-year').value = '';
+    document.getElementById('discount-rate-for-multiple-year').value = '';
 }
