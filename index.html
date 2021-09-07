@@ -89,7 +89,7 @@
                 <div class="">
                     <div class="input-group">
                         <button onclick="calculateTheEPS()" class="btn btn-primary" type="button"
-                            id="button-addon1">Calculate the P/E ratio</button>
+                            id="button-addon1">Calculate the EPS ratio</button>
                     </div>
 
                 </div>
@@ -266,7 +266,8 @@
             </div>
         </div>
     </div>
-    <!-- the present value for Multiple year-->
+
+    <!-- the present value for 3 years-->
     <div class="container">
         <h3> what would be the present value for 3 years
         </h3>
@@ -328,6 +329,82 @@
             <div class="col">
                 <div class="p-2 border bg-light">
                     Result <span id="present-value-for-multiple-year-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- the present value for 4 years-->
+    <div class="container">
+        <h3> what would be the present value for 4 years
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> dividend 1</span>
+                        <input id="dividend-1-for-multiple-4" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">dividend 2</span>
+                        <input id="dividend-2-for-multiple-4" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">dividend 3</span>
+                        <input id="dividend-3-for-multiple-4" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">dividend 4</span>
+                        <input id="dividend-4-for-multiple-4" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Selling price</span>
+                        <input id="selling-price-for-multiple-year-4" type="text" class="form-control"
+                            placeholder="Input here" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> discount rate</span>
+                        <input id="discount-rate-for-multiple-year-4" type="text" class="form-control"
+                            placeholder="Input here" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group">
+                        <button onclick="calculatePresentValueForMultipleYear4()" class="btn btn-primary" type="button"
+                            id="button-addon1">Calculate present value for multi Year</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="present-value-for-multiple-year4-result"> </span>
                 </div>
             </div>
         </div>

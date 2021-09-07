@@ -86,8 +86,7 @@ function calculatePresentValue() {
     document.getElementById('selling-price').value = '';
     document.getElementById('discount-rate').value = '';
 }
-
-
+// the present value for 3 years
 function calculatePresentValueForMultipleYear() {
     const dividendText1 = document.getElementById('dividend-multiple-1').value;
     const dividend1 = parseFloat(dividendText1);
@@ -105,7 +104,7 @@ function calculatePresentValueForMultipleYear() {
 
     const dividend1Power = dividend1 / Math.pow((1 + k2), 1);
     const dividend2Power = dividend2 / Math.pow(1 + k2, 2);
-    const dividend3Power = (dividend3 + sellingPriceForMultipleYear) / Math.pow(1 + k2, 3)
+    const dividend3Power = (dividend3 + sellingPriceForMultipleYear) / Math.pow(1 + k2, 3);
 
     const presentValueForMultipleYear = dividend1Power + dividend2Power + dividend3Power;
     presentValueForMultipleYearResult.innerText = presentValueForMultipleYear;
@@ -115,4 +114,34 @@ function calculatePresentValueForMultipleYear() {
     document.getElementById('dividend-multiple-3').value = '';
     document.getElementById('selling-price-for-multiple-year').value = '';
     document.getElementById('discount-rate-for-multiple-year').value = '';
+}
+// the present value for 4 years
+function calculatePresentValueForMultipleYear4() {
+    const dividend1Year4Text = document.getElementById('dividend-1-for-multiple-4').value;
+    const dividend1Year4 = parseFloat(dividend1Year4Text);
+    const dividend2Year4Text = document.getElementById('dividend-2-for-multiple-4').value;
+    const dividend2Year4 = parseFloat(dividend2Year4Text);
+    const dividend3Year4Text = document.getElementById('dividend-3-for-multiple-4').value;
+    const dividend3Year4 = parseFloat(dividend3Year4Text);
+    const dividend4Year4Text = document.getElementById('dividend-4-for-multiple-4').value;
+    const dividend4Year4 = parseFloat(dividend4Year4Text);
+    const sellingPriceForMultipleYear4Text = document.getElementById('selling-price-for-multiple-year-4').value;
+    const sellingPriceForMultipleYear4 = parseFloat(sellingPriceForMultipleYear4Text);
+    const discountRateForMultipleYear4Text = document.getElementById('discount-rate-for-multiple-year-4').value;
+    const discountRateForMultipleYear4 = parseFloat(discountRateForMultipleYear4Text);
+    const k4 = discountRateForMultipleYear4 / 100;
+    const presentValueForMultipleYear4Result = document.getElementById('present-value-for-multiple-year4-result');
+    const dividend1For4YearPower = dividend1Year4 / Math.pow((1 + k4), 1);
+    const dividend2For4YearPower = dividend2Year4 / Math.pow(1 + k4, 2);
+    const dividend3For4YearPower = dividend3Year4 / Math.pow(1 + k4, 3);
+    const dividend4For4YearPower = (dividend4Year4 + sellingPriceForMultipleYear4) / Math.pow(1 + k4, 4);
+    const presentValueForMultipleYear4 = dividend1For4YearPower + dividend2For4YearPower + dividend3For4YearPower + dividend4For4YearPower;
+    presentValueForMultipleYear4Result.innerText = presentValueForMultipleYear4;
+
+    document.getElementById('dividend-1-for-multiple-4').value = '';
+    document.getElementById('dividend-2-for-multiple-4').value = '';
+    document.getElementById('dividend-3-for-multiple-4').value = '';
+    document.getElementById('dividend-4-for-multiple-4').value = '';
+    document.getElementById('selling-price-for-multiple-year-4').value = '';
+    document.getElementById('discount-rate-for-multiple-year-4').value = '';
 }
