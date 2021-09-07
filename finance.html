@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Calculate the P/E ratio.
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Net profit</span>
+                        <input id="net-profit" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">number of equity share</span>
+                        <input id="number-of-equityequity-share" type="text" class="form-control"
+                            placeholder="Input here" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> Market price per share</span>
+                        <input id="market-price-per-share" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group mb-3">
+                        <button onclick="calculatePERatio()" class="btn btn-primary" type="button"
+                            id="button-addon1">Calculate the
+                            P/E ratio</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="pe-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Calculate the EPS -->
+    <div class="container">
+        <h3>Calculate the EPS.
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">P/E ratio</span>
+                        <input id="pe-ration" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Market price per share</span>
+                        <input id="market-price-per-share-of-eps" type="text" class="form-control"
+                            placeholder="Input here" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group mb-3">
+                        <button onclick="calculateTheEPS()" class="btn btn-primary" type="button"
+                            id="button-addon1">Calculate the P/E ratio</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="eps-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Calculate NAV  -->
+    <div class="container">
+        <h3>Calculate NAV
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">securities worth</span>
+                        <input id="securities-worth" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">fund owes</span>
+                        <input id="fund-owes" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> another...million for rent..</span>
+                        <input id="another-rent" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> shares outstanding</span>
+                        <input id="shares-outstanding" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group">
+                        <button onclick="CalculateNAV()" class="btn btn-primary" type="button" id="button-addon1">
+                            Calculate NAV</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="nav-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Determine the number of share outstanding -->
+    <div class="container">
+        <h3> Determine the number of share outstanding.
+        </h3>
+        <div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3">
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">securities worth</span>
+                        <input id="securities-worth2" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">fund owes</span>
+                        <input id="fund-owes2" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> another...million for rent..</span>
+                        <input id="another-rent2" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border bg-light">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1"> Value
+                            of NAV</span>
+                        <input id="value-of-nav" type="text" class="form-control" placeholder="Input here"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="">
+                    <div class="input-group">
+                        <button onclick="CalculateNumberOfShareOutstanding()" class="btn btn-primary" type="button"
+                            id="button-addon1">
+                            Calculate number of share outstanding</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2 border bg-light">
+                    Result <span id="number-of-share-outstanding-result"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="finance.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
